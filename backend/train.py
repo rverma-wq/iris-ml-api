@@ -42,13 +42,9 @@ def train_model():
     print("Model Accuracy:", accuracy)
     print("Confusion Matrix:\n", cm)
 
-    # Create model folder if not exists
-    os.makedirs("model", exist_ok=True)
 
-    # Save model
-    joblib.dump(pipeline, "iris_model.pkl")
-
-    print("Model saved successfully in iris_model.pkl")
+joblib.dump(pipeline, "iris_model.pkl")
+print("Model saved successfully in iris_model.pkl")
 
 
 if __name__ == "__main__":
