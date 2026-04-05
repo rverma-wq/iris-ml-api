@@ -46,9 +46,9 @@ def train_model():
     os.makedirs("model", exist_ok=True)
 
     # Save model
-    joblib.dump(pipeline, "model/iris_model.pkl")
+    joblib.dump(pipeline, "iris_model.pkl")
 
-    print("Model saved successfully in model/iris_model.pkl")
+    print("Model saved successfully in iris_model.pkl")
 
 
 if __name__ == "__main__":

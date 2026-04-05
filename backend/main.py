@@ -18,7 +18,7 @@ MODEL_VERSION = "1.0"
 MODEL_VERSION = "1.0"
 
 # Load model once when API starts
-model_path = os.path.join("model", "iris_model.pkl")
+model_path = os.path.join("iris_model.pkl")
 model = joblib.load(model_path)
 
 # Class names from Iris dataset
