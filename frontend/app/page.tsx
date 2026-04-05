@@ -15,6 +15,7 @@ export default function Home() {
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
 
   const handleSubmit = async () => {
     setLoading(true);
