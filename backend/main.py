@@ -2,10 +2,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import os
-from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
-# ✅ ADD THIS BLOCK (VERY IMPORTANT)
+
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -15,13 +16,13 @@ app.add_middleware(
 )
 
 MODEL_VERSION = "1.0"
-MODEL_VERSION = "1.0"
 
-# Load model once when API starts
-model_path = os.path.join("backend", "iris_model.pkl")
+# Load model safely
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "iris_model.pkl")
 model = joblib.load(model_path)
 
-# Class names from Iris dataset
+# Class names
 class_names = ["setosa", "versicolor", "virginica"]
 
 
